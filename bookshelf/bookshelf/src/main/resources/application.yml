@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: bookshelf
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bookshelf
+    username: postgres
+    password: yynao-YAY22
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 2525
+    username: 68c4724e187e53
+    password: c707aa88c443c7
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+server:
+  port: 8080
+recaptcha:
+  secret: 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
+  verify-url: https://www.google.com/recaptcha/api/siteverify
+jwt:
+  secret: my-super-secret-key-my-super-secret-key
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

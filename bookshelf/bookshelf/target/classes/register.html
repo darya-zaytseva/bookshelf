@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <base target="_blank">
+</head>
+<body>
+<h2>Регистрация</h2>
+<form action="/auth/register" method="post">
+    <label>Username:</label>
+    <input type="text" name="username" required><br><br>
+    <label>Email:</label>
+    <input type="email" name="email" required><br><br>
+    <label>Password:</label>
+    <input type="password" name="password" required><br><br>
+    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+    <br>
+    <button type="submit">Зарегистрироваться</button>
+</form>
+<div th:if="${error}" style="color: red;">
+    <p th:text="${error}"></p>
+</div>
+<div th:if="${success}" style="color: green;">
+    <p th:text="${success}"></p>
+</div>
+</body>
+</html>
